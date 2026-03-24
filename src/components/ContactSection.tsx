@@ -15,7 +15,6 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // No backend — just UI
     alert("Thanks for reaching out! (Contact form is UI-only for now)");
     setForm({ name: "", email: "", message: "" });
   };
@@ -24,12 +23,7 @@ const ContactSection = () => {
     <SectionWrapper id="contact" className="bg-secondary/30">
       <SectionTitle title="Get In Touch" subtitle="Let's connect and build something great" />
       <div className="grid md:grid-cols-2 gap-12">
-        {/* Info */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-        >
+        <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
           <h3 className="font-display text-xl font-bold mb-4">Let's Talk</h3>
           <p className="text-muted-foreground mb-8 leading-relaxed">
             I'm always open to discussing new projects, internship opportunities, or collaborations in AI and web development.
@@ -39,9 +33,9 @@ const ContactSection = () => {
               <a
                 key={s.label}
                 href={s.href}
-                className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:border-primary/30 transition-colors group"
+                className="flex items-center gap-4 p-4 bg-card rounded-xl neon-border glow-card group"
               >
-                <div className="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center neon-glow">
                   <s.icon size={18} className="text-primary-foreground" />
                 </div>
                 <div>
@@ -53,7 +47,6 @@ const ContactSection = () => {
           </div>
         </motion.div>
 
-        {/* Form */}
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, x: 30 }}
@@ -61,33 +54,31 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="space-y-4"
         >
-          <input
-            type="text"
-            placeholder="Your Name"
-            required
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            required
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
-          />
+          {[
+            { type: "text", placeholder: "Your Name", key: "name" as const },
+            { type: "email", placeholder: "Your Email", key: "email" as const },
+          ].map((field) => (
+            <input
+              key={field.key}
+              type={field.type}
+              placeholder={field.placeholder}
+              required
+              value={form[field.key]}
+              onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
+              className="w-full px-4 py-3 rounded-xl bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50 transition-all duration-300"
+            />
+          ))}
           <textarea
             placeholder="Your Message"
             required
             rows={5}
             value={form.message}
             onChange={(e) => setForm({ ...form, message: e.target.value })}
-            className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all resize-none"
+            className="w-full px-4 py-3 rounded-xl bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50 transition-all duration-300 resize-none"
           />
           <button
             type="submit"
-            className="inline-flex items-center gap-2 gradient-bg text-primary-foreground px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity w-full justify-center"
+            className="inline-flex items-center gap-2 gradient-bg text-primary-foreground px-8 py-3.5 rounded-xl font-medium hover:opacity-90 transition-all w-full justify-center neon-glow hover:scale-[1.02] duration-300"
           >
             Send Message <Send size={16} />
           </button>

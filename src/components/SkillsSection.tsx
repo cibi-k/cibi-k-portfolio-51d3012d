@@ -4,38 +4,10 @@ import { motion } from "framer-motion";
 import { Code2, Brain, Globe, Wrench } from "lucide-react";
 
 const categories = [
-  {
-    title: "Languages",
-    icon: Code2,
-    skills: [
-      { name: "Python", level: 90 },
-      { name: "JavaScript", level: 75 },
-    ],
-  },
-  {
-    title: "AI / ML",
-    icon: Brain,
-    skills: [
-      { name: "TensorFlow", level: 80 },
-      { name: "Scikit-learn", level: 85 },
-    ],
-  },
-  {
-    title: "Web",
-    icon: Globe,
-    skills: [
-      { name: "React.js", level: 78 },
-      { name: "HTML & CSS", level: 88 },
-    ],
-  },
-  {
-    title: "Tools",
-    icon: Wrench,
-    skills: [
-      { name: "Git & GitHub", level: 82 },
-      { name: "Jupyter Notebook", level: 90 },
-    ],
-  },
+  { title: "Languages", icon: Code2, skills: [{ name: "Python", level: 90 }, { name: "JavaScript", level: 75 }] },
+  { title: "AI / ML", icon: Brain, skills: [{ name: "TensorFlow", level: 80 }, { name: "Scikit-learn", level: 85 }] },
+  { title: "Web", icon: Globe, skills: [{ name: "React.js", level: 78 }, { name: "HTML & CSS", level: 88 }] },
+  { title: "Tools", icon: Wrench, skills: [{ name: "Git & GitHub", level: 82 }, { name: "Jupyter Notebook", level: 90 }] },
 ];
 
 const SkillsSection = () => (
@@ -49,9 +21,10 @@ const SkillsSection = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: ci * 0.1 }}
-          className="bg-card rounded-xl p-6 border border-border card-hover"
+          whileHover={{ y: -5 }}
+          className="bg-card rounded-xl p-6 border border-border glow-card"
         >
-          <div className="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center mb-4">
+          <div className="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center mb-4 neon-glow">
             <cat.icon size={20} className="text-primary-foreground" />
           </div>
           <h3 className="font-display font-semibold mb-4">{cat.title}</h3>

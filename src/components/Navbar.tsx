@@ -7,6 +7,7 @@ const links = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
+  { label: "Profiles", href: "#coding-profiles" },
   { label: "Achievements", href: "#achievements" },
   { label: "Contact", href: "#contact" },
 ];
@@ -14,10 +15,25 @@ const links = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handler);
+    const handler = () => {
+      setScrolled(window.scrollY > 20);
+      // find active section
+      for (const l of [...links].reverse()) {
+        const el = document.querySelector(l.href);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 150) {
+            setActive(l.href);
+            return;
+          }
+        }
+      }
+      setActive("");
+    };
+    window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
@@ -34,22 +50,26 @@ const Navbar = () => {
         <a href="#" className="font-display text-xl font-bold gradient-text">
           Cibi K
         </a>
-
-        {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className={`text-sm font-medium transition-colors relative ${
+                active === l.href ? "text-primary" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               {l.label}
+              {active === l.href && (
+                <motion.div
+                  layoutId="nav-indicator"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 gradient-bg rounded-full"
+                />
+              )}
             </a>
           ))}
           <ThemeToggle />
         </div>
-
-        {/* Mobile toggle */}
         <div className="md:hidden flex items-center gap-3">
           <ThemeToggle />
           <button onClick={() => setMobileOpen(!mobileOpen)} className="text-foreground">
@@ -57,8 +77,6 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -73,7 +91,9 @@ const Navbar = () => {
                   key={l.href}
                   href={l.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className={`text-sm font-medium transition-colors ${
+                    active === l.href ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                  }`}
                 >
                   {l.label}
                 </a>
