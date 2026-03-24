@@ -75,15 +75,15 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* Neon Purple theme */
+  /* Violet theme */
   .dark.theme-purple {
-    --primary: 270 95% 65%;
-    --accent: 300 80% 55%;
-    --ring: 270 95% 65%;
-    --gradient-start: 270 95% 65%;
-    --gradient-end: 300 80% 55%;
-    --neon: 270 95% 65%;
-    --neon-glow: 0 0 25px hsl(270 95% 65% / 0.4), 0 0 50px hsl(270 95% 65% / 0.15);
+    --primary: 265 60% 60%;
+    --accent: 290 50% 55%;
+    --ring: 265 60% 60%;
+    --gradient-start: 265 60% 60%;
+    --gradient-end: 290 50% 55%;
+    --neon: 265 60% 60%;
+    --neon-glow: 0 0 20px hsl(265 60% 60% / 0.2), 0 0 40px hsl(265 60% 60% / 0.08);
   }
 
   /* Glass White */
