@@ -178,8 +178,8 @@
     @apply transition-all duration-500;
   }
   .glow-card:hover {
-    box-shadow: 0 0 40px hsl(var(--neon) / 0.12), 0 10px 40px hsl(var(--neon) / 0.08);
-    border-color: hsl(var(--neon) / 0.3);
+    box-shadow: 0 4px 24px hsl(var(--neon) / 0.08), 0 8px 32px hsl(var(--neon) / 0.04);
+    border-color: hsl(var(--neon) / 0.2);
   }
 
   .floating {
