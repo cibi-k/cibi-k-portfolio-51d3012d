@@ -1,37 +1,13 @@
 import SectionWrapper from "./SectionWrapper";
 import SectionTitle from "./SectionTitle";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Trophy, Code, BookOpen, Cpu } from "lucide-react";
 
 const profiles = [
-  {
-    name: "LeetCode",
-    url: "#",
-    color: "235 80% 55%",
-    icon: "LC",
-    description: "Solving DSA problems",
-  },
-  {
-    name: "CodeChef",
-    url: "#",
-    color: "30 80% 50%",
-    icon: "CC",
-    description: "Competitive programming",
-  },
-  {
-    name: "GeeksforGeeks",
-    url: "#",
-    color: "140 60% 40%",
-    icon: "GfG",
-    description: "Practice & learning",
-  },
-  {
-    name: "HackerRank",
-    url: "#",
-    color: "150 70% 40%",
-    icon: "HR",
-    description: "Skills & certifications",
-  },
+  { name: "LeetCode", url: "#", icon: Code, gradient: "from-[hsl(35,85%,55%)] to-[hsl(25,90%,50%)]", description: "Solving DSA problems", stats: "100+ solved" },
+  { name: "CodeChef", url: "#", icon: Trophy, gradient: "from-[hsl(10,70%,50%)] to-[hsl(30,80%,55%)]", description: "Competitive programming", stats: "3★ rated" },
+  { name: "GeeksforGeeks", url: "#", icon: BookOpen, gradient: "from-[hsl(140,60%,40%)] to-[hsl(160,50%,45%)]", description: "Practice & learning", stats: "200+ articles" },
+  { name: "HackerRank", url: "#", icon: Cpu, gradient: "from-[hsl(150,70%,38%)] to-[hsl(170,60%,42%)]", description: "Skills & certifications", stats: "5★ Python" },
 ];
 
 const CodingProfilesSection = () => (
@@ -48,19 +24,20 @@ const CodingProfilesSection = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: i * 0.1 }}
-          whileHover={{ y: -8, scale: 1.02 }}
-          className="group bg-card rounded-xl border border-border p-6 text-center glow-card block"
+          whileHover={{ y: -10, scale: 1.03 }}
+          className="group bg-card rounded-xl neon-border p-6 text-center glow-card block relative overflow-hidden"
         >
-          <div
-            className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4 text-primary-foreground font-display font-bold text-lg transition-transform group-hover:scale-110 duration-300"
-            style={{ background: `linear-gradient(135deg, hsl(${p.color}), hsl(${p.color} / 0.7))` }}
-          >
-            {p.icon}
+          {/* Background gradient glow */}
+          <div className={`absolute inset-0 bg-gradient-to-br ${p.gradient} opacity-0 group-hover:opacity-[0.06] transition-opacity duration-500`} />
+
+          <div className={`relative w-14 h-14 rounded-xl bg-gradient-to-br ${p.gradient} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+            <p.icon size={24} className="text-white" />
           </div>
-          <h3 className="font-display font-semibold mb-1 group-hover:text-primary transition-colors">{p.name}</h3>
-          <p className="text-muted-foreground text-sm mb-3">{p.description}</p>
-          <span className="inline-flex items-center gap-1 text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-            Visit <ExternalLink size={12} />
+          <h3 className="font-display font-semibold mb-1 group-hover:text-primary transition-colors relative">{p.name}</h3>
+          <p className="text-muted-foreground text-sm mb-2 relative">{p.description}</p>
+          <span className="inline-block text-xs font-medium gradient-text mb-3 relative">{p.stats}</span>
+          <span className="flex items-center justify-center gap-1 text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity relative">
+            Visit <ExternalLink size={11} />
           </span>
         </motion.a>
       ))}
