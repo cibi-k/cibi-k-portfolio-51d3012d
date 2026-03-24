@@ -11,10 +11,12 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import Preloader from "@/components/Preloader";
+import CustomCursor from "@/components/CustomCursor";
 
 const Index = () => (
   <>
     <Preloader />
+    <CustomCursor />
     <ScrollProgress />
     <Navbar />
     <HeroSection />
