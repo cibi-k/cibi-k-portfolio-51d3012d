@@ -2,33 +2,55 @@ import SectionWrapper from "./SectionWrapper";
 import SectionTitle from "./SectionTitle";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import { useState } from "react";
 
 const projects = [
   {
     title: "AI Chatbot",
-    description:
-      "An NLP-powered chatbot that understands user intent and generates context-aware responses using transformer-based models.",
+    description: "An NLP-powered chatbot that understands user intent and generates context-aware responses using transformer-based models.",
     tech: ["Python", "TensorFlow", "NLP", "Flask"],
     github: "#",
     demo: "#",
   },
   {
     title: "Face Detection System",
-    description:
-      "Real-time face detection and recognition system built using OpenCV and deep learning, capable of identifying multiple faces.",
+    description: "Real-time face detection and recognition system built using OpenCV and deep learning, capable of identifying multiple faces.",
     tech: ["Python", "OpenCV", "Deep Learning"],
     github: "#",
     demo: null,
   },
   {
     title: "Image Classifier",
-    description:
-      "A convolutional neural network that classifies images across 10 categories with 94% accuracy, deployed as a web app.",
+    description: "A convolutional neural network that classifies images across 10 categories with 94% accuracy, deployed as a web app.",
     tech: ["Python", "TensorFlow", "React", "CNN"],
     github: "#",
     demo: "#",
   },
 ];
+
+const TiltCard = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  const [style, setStyle] = useState({ transform: "perspective(800px) rotateX(0deg) rotateY(0deg)" });
+
+  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setStyle({ transform: `perspective(800px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg)` });
+  };
+
+  const handleLeave = () => setStyle({ transform: "perspective(800px) rotateX(0deg) rotateY(0deg)" });
+
+  return (
+    <div
+      onMouseMove={handleMove}
+      onMouseLeave={handleLeave}
+      className={className}
+      style={{ ...style, transition: "transform 0.2s ease-out" }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const ProjectsSection = () => (
   <SectionWrapper id="projects">
@@ -41,44 +63,33 @@ const ProjectsSection = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: i * 0.1 }}
-          className="group bg-card rounded-xl border border-border overflow-hidden card-hover"
         >
-          {/* Gradient top bar */}
-          <div className="h-1 gradient-bg" />
-          <div className="p-6">
-            <h3 className="font-display text-lg font-bold mb-2 group-hover:text-primary transition-colors">
-              {p.title}
-            </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              {p.description}
-            </p>
-            <div className="flex flex-wrap gap-2 mb-5">
-              {p.tech.map((t) => (
-                <span
-                  key={t}
-                  className="text-xs px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground font-medium"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-            <div className="flex gap-3">
-              <a
-                href={p.github}
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Github size={15} /> Code
-              </a>
-              {p.demo && (
-                <a
-                  href={p.demo}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                >
-                  <ExternalLink size={15} /> Live Demo
+          <TiltCard className="group bg-card rounded-xl border border-border overflow-hidden glow-card h-full">
+            <div className="h-1 gradient-bg" />
+            <div className="p-6">
+              <h3 className="font-display text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+                {p.title}
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4">{p.description}</p>
+              <div className="flex flex-wrap gap-2 mb-5">
+                {p.tech.map((t) => (
+                  <span key={t} className="text-xs px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground font-medium">
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <div className="flex gap-3">
+                <a href={p.github} className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                  <Github size={15} /> Code
                 </a>
-              )}
+                {p.demo && (
+                  <a href={p.demo} className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+                    <ExternalLink size={15} /> Live Demo
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
+          </TiltCard>
         </motion.div>
       ))}
     </div>
