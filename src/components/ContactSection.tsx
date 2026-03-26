@@ -5,9 +5,9 @@ import { Github, Linkedin, Mail, Send } from "lucide-react";
 import { useState } from "react";
 
 const socials = [
-  { icon: Mail, label: "Email", value: "cibi@example.com", href: "mailto:cibi@example.com" },
-  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/cibik", href: "#" },
-  { icon: Github, label: "GitHub", value: "github.com/cibik", href: "#" },
+  { icon: Mail, label: "Email", value: "kcibiofficial@gmail.com", href: "mailto:kcibiofficial@gmail.com" },
+  { icon: Linkedin, label: "LinkedIn", value: "https://www.linkedin.com/in/cibi-k/", href: "https://www.linkedin.com/in/cibi-k/" },
+  { icon: Github, label: "GitHub", value: "https://github.com/cibi-k", href: "https://github.com/cibi-k" },
 ];
 
 const ContactSection = () => {
@@ -16,7 +16,7 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thanks for reaching out! (Contact form is UI-only for now)");
+    alert("Thanks for reaching out!");
     setForm({ name: "", email: "", message: "" });
   };
 
@@ -55,11 +55,12 @@ const ContactSection = () => {
         </motion.div>
 
         <motion.form
-          onSubmit={handleSubmit}
+          action="https://formspree.io/f/mjgpbdgl"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="space-y-4"
+          method="post"
         >
           <input
             type="text" placeholder="Your Name" required value={form.name}

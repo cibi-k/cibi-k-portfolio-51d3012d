@@ -6,26 +6,21 @@ import { useState } from "react";
 
 const projects = [
   {
-    title: "AI Chatbot",
-    description: "An NLP-powered chatbot that understands user intent and generates context-aware responses using transformer-based models.",
-    tech: ["Python", "TensorFlow", "NLP", "Flask"],
+    title: "AI Mentor | NIT-T",
+    
+    description: "Developed this project during the AI for All one-day ideathon conducted by NIT, focusing on applying AI concepts to propos solutions within a limited time.",
+    tech: ["Python", "HTML", "CSS", "JS","vectorDB","NLP (Fundamentals) "],
     github: "#",
-    demo: "#",
+    demo: "https://docs.google.com/presentation/d/1kWOl0nqPUAzvyFTJewb7fkXfbMeOjspjDJrLZ3-heYg/edit?usp=sharing",
   },
   {
-    title: "Face Detection System",
-    description: "Real-time face detection and recognition system built using OpenCV and deep learning, capable of identifying multiple faces.",
-    tech: ["Python", "OpenCV", "Deep Learning"],
+    title: "AI Powered Growth Platform | KPRIET ",
+    description: "Built this project as part of Hackathon 3.0 at KPRIET, focusing on delivering a functional solution under time constraints while enhancing problem-solving and teamwork skills.",
+    tech: ["Python", "HTML", "CSS", "JS","chromaDB","NLP (Fundamentals)"],
     github: "#",
-    demo: null,
+    demo: "https://docs.google.com/presentation/d/13UqKjk06MVqDCD-hE9Nz3499Zo9xLAUcuctj5IF143c/edit?usp=sharing",
   },
-  {
-    title: "Image Classifier",
-    description: "A convolutional neural network that classifies images across 10 categories with 94% accuracy, deployed as a web app.",
-    tech: ["Python", "TensorFlow", "React", "CNN"],
-    github: "#",
-    demo: "#",
-  },
+ 
 ];
 
 const TiltCard = ({ children, className }: { children: React.ReactNode; className?: string }) => {
@@ -50,7 +45,7 @@ const TiltCard = ({ children, className }: { children: React.ReactNode; classNam
 const ProjectsSection = () => (
   <SectionWrapper id="projects">
     <SectionTitle title="Projects" subtitle="Things I've built" />
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 ">
       {projects.map((p, i) => (
         <motion.div
           key={p.title}

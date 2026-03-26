@@ -7,22 +7,22 @@ const categories = [
   {
     title: "Languages",
     icon: Code2,
-    skills: ["Python", "JavaScript", "TypeScript", "SQL"],
+    skills: ["C","C++","Python",],
   },
   {
-    title: "AI / ML",
+    title: "Core",
     icon: Brain,
-    skills: ["TensorFlow", "Scikit-learn", "Pandas", "NumPy"],
+    skills: ["Data Structures & Algorithms "],
   },
   {
     title: "Web",
     icon: Globe,
-    skills: ["React.js", "HTML & CSS", "Tailwind CSS", "Node.js"],
+    skills: [ "HTML", "CSS","JavaScript"],
   },
   {
     title: "Tools",
     icon: Wrench,
-    skills: ["Git & GitHub", "Jupyter", "VS Code", "Docker"],
+    skills: ["Git","GitHub", "VS Code"],
   },
 ];
 

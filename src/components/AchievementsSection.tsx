@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import { Award, BookOpen, Trophy } from "lucide-react";
 
 const achievements = [
-  { title: "Google AI Essentials", org: "Google / Coursera", icon: Award, description: "Completed comprehensive AI fundamentals course covering machine learning, neural networks, and practical applications." },
-  { title: "Deep Learning Specialization", org: "Coursera", icon: BookOpen, description: "Five-course specialization covering CNNs, RNNs, sequence models, and structuring ML projects." },
-  { title: "Python for Data Science", org: "IBM / Coursera", icon: Trophy, description: "Professional certificate in Python programming, data analysis, and visualization." },
+ 
+  { title: "Agentic AI", org: "IBM", icon: BookOpen, description: "Fundamentals of Agentic AI, Generative AI & LLMs." },
+  { title: "Python", org: "GUVI | IIT-M", icon: Award, description: "Professional certificate in Python programming" },
+   { title: "AI FOR ALL – One Day Ideathon", org: "NIT-T", icon: Trophy, description: <> Qualified for Finals Among 650+ Teams  <br/> Top 5 in Education Domain</> },
 ];
 
 const AchievementsSection = () => (

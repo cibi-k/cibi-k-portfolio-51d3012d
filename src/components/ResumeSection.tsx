@@ -19,7 +19,7 @@ const ResumeSection = () => (
           Download my resume to learn more about my experience, education, and skills.
         </p>
         <motion.a
-          href="#"
+          href="resume.pdf"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
           className="inline-flex items-center gap-2 gradient-bg text-primary-foreground px-8 py-3.5 rounded-xl font-medium hover:opacity-90 transition-opacity shadow-lg neon-glow"

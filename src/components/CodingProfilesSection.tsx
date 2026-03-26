@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { ExternalLink, Trophy, Code, BookOpen, Cpu } from "lucide-react";
 
 const profiles = [
-  { name: "LeetCode", url: "#", icon: Code, gradient: "from-[hsl(35,85%,55%)] to-[hsl(25,90%,50%)]", description: "Solving DSA problems", stats: "100+ solved" },
-  { name: "CodeChef", url: "#", icon: Trophy, gradient: "from-[hsl(10,70%,50%)] to-[hsl(30,80%,55%)]", description: "Competitive programming", stats: "3★ rated" },
-  { name: "GeeksforGeeks", url: "#", icon: BookOpen, gradient: "from-[hsl(140,60%,40%)] to-[hsl(160,50%,45%)]", description: "Practice & learning", stats: "200+ articles" },
-  { name: "HackerRank", url: "#", icon: Cpu, gradient: "from-[hsl(150,70%,38%)] to-[hsl(170,60%,42%)]", description: "Skills & certifications", stats: "5★ Python" },
+  { name: "LeetCode", url: "https://leetcode.com/u/CibiK319/", icon: Code, gradient: "from-[hsl(35,85%,55%)] to-[hsl(25,90%,50%)]", description: "Solving DSA problems", stats: "50+ solved" },
+  { name: "CodeChef", url: "https://www.codechef.com/users/cibi_k", icon: Trophy, gradient: "from-[hsl(10,70%,50%)] to-[hsl(30,80%,55%)]", description: "Competitive programming", stats: "1★ rated" },
+  { name: "GeeksforGeeks", url: "#", icon: BookOpen, gradient: "from-[hsl(140,60%,40%)] to-[hsl(160,50%,45%)]", description: "Practice & learning", stats: " practiced 50+" },
+  { name: "HackerRank", url: "https://www.hackerrank.com/profile/cibik", icon: Cpu, gradient: "from-[hsl(150,70%,38%)] to-[hsl(170,60%,42%)]", description: "Fundamentals", stats: "Worked on 75+" },
 ];
 
 const CodingProfilesSection = () => (

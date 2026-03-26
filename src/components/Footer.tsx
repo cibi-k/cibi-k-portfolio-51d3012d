@@ -11,9 +11,9 @@ const Footer = () => (
       </div>
       <div className="flex gap-3">
         {[
-          { icon: Github, href: "#" },
-          { icon: Linkedin, href: "#" },
-          { icon: Mail, href: "mailto:cibi@example.com" },
+          { icon: Github, href: "https://github.com/cibi-k" },
+          { icon: Linkedin, href: "https://www.linkedin.com/in/cibi-k/" },
+          { icon: Mail, href: "kcibiofficial@gmail.com" },
         ].map((s, i) => (
           <a key={i} href={s.href}
             className="w-10 h-10 rounded-xl bg-card border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all glow-card">

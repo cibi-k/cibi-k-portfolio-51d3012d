@@ -6,10 +6,11 @@ import profileImg from "@/assets/profile.png";
 const ParticleField = lazy(() => import("./ParticleField"));
 
 const roles = [
-  "AI & Machine Learning Developer",
-  "Deep Learning Enthusiast",
-  "Python Developer",
-  "Full Stack Builder",
+   "Data Structures & Algorithms Enthusiast ",
+  "Aspiring Software Engineer",
+ 
+  "Problem Solver",
+  "Frontend Developer","Information Technology Undergraduate"
 ];
 
 const HeroSection = () => {
@@ -87,7 +88,7 @@ const HeroSection = () => {
               className="inline-block mb-6"
             >
               <span className="text-primary font-medium tracking-[0.2em] uppercase text-xs px-4 py-2 rounded-full border border-primary/20 bg-primary/5 neon-glow">
-                AI & ML Portfolio
+                AI & Tech Enthusiast
               </span>
             </motion.div>
 
@@ -104,8 +105,7 @@ const HeroSection = () => {
             </div>
 
             <p className="text-muted-foreground max-w-lg mb-10 text-sm md:text-base leading-relaxed">
-              Building intelligent systems using Python, Deep Learning, and modern web technologies. Passionate about creating AI solutions that make a real impact.
-            </p>
+             I am an Information Technology student focused on building a strong foundation in Data Structures and Algorithms. I enjoy solving problems, improving logical thinking, and continuously learning modern web development technologies to grow as a software developer.           </p>
 
             <div className="flex flex-wrap gap-3">
               <a
@@ -129,18 +129,7 @@ const HeroSection = () => {
             </div>
 
             {/* Quick stats */}
-            <div className="flex gap-8 mt-12 pt-8 border-t border-border/30">
-              {[
-                { value: "10+", label: "Projects" },
-                { value: "5+", label: "Certifications" },
-                { value: "3+", label: "Languages" },
-              ].map((s) => (
-                <div key={s.label}>
-                  <div className="font-display text-2xl font-bold gradient-text">{s.value}</div>
-                  <div className="text-muted-foreground text-xs mt-1">{s.label}</div>
-                </div>
-              ))}
-            </div>
+            
           </motion.div>
 
           {/* RIGHT — Profile Image */}
@@ -177,7 +166,7 @@ const HeroSection = () => {
               >
                 <div className="w-full h-full rounded-full overflow-hidden p-[3px] gradient-bg">
                   <img
-                    src={profileImg}
+                    src="/profile.jpg"
                     alt="Cibi K"
                     className="w-full h-full rounded-full object-cover"
                   />
@@ -190,21 +179,21 @@ const HeroSection = () => {
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity }}
               >
-                🧠 AI/ML
+              🐍 Python 
               </motion.div>
               <motion.div
                 className="absolute -top-2 -right-4 px-3 py-1.5 rounded-lg glass text-xs font-medium neon-border"
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, delay: 1 }}
               >
-                🐍 Python
+                 🧠 DSA
               </motion.div>
               <motion.div
                 className="absolute top-1/2 -right-8 px-3 py-1.5 rounded-lg glass text-xs font-medium neon-border"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
               >
-                ⚛️ React
+                ⚡Technologist
               </motion.div>
             </div>
           </motion.div>
