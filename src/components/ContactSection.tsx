@@ -11,8 +11,7 @@ const socials = [
 ];
 
 const ContactSection = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [focused, setFocused] = useState<string | null>(null);
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,41 +53,60 @@ const ContactSection = () => {
           </div>
         </motion.div>
 
-        <motion.form
-          action="https://formspree.io/f/mlgodwob"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="space-y-4"
-          method="post"
-        >
-          <input
-            type="text" placeholder="Your Name" required value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-            onFocus={() => setFocused("name")} onBlur={() => setFocused(null)}
-            className={inputClass("name")}
-          />
-          <input
-            type="email" placeholder="Your Email" required value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            onFocus={() => setFocused("email")} onBlur={() => setFocused(null)}
-            className={inputClass("email")}
-          />
-          <textarea
-            placeholder="Your Message" required rows={5} value={form.message}
-            onChange={(e) => setForm({ ...form, message: e.target.value })}
-            onFocus={() => setFocused("message")} onBlur={() => setFocused(null)}
-            className={`${inputClass("message")} resize-none`}
-          />
-          <motion.button
-            type="submit"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 gradient-bg text-primary-foreground px-8 py-3.5 rounded-xl font-medium hover:opacity-90 transition-all w-full justify-center neon-glow"
-          >
-            Send Message <Send size={16} />
-          </motion.button>
-        </motion.form>
+    <motion.form
+  action="https://formspree.io/f/mlgodwob"
+  method="POST"
+  initial={{ opacity: 0, x: 30 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  className="space-y-4"
+>
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    required
+    onFocus={() => setFocused("name")}
+    onBlur={() => setFocused(null)}
+    className={inputClass("name")}
+  />
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email"
+    required
+    onFocus={() => setFocused("email")}
+    onBlur={() => setFocused(null)}
+    className={inputClass("email")}
+  />
+
+  <textarea
+    name="message"
+    placeholder="Your Message"
+    required
+    rows={5}
+    onFocus={() => setFocused("message")}
+    onBlur={() => setFocused(null)}
+    className={`${inputClass("message")} resize-none`}
+  />
+
+  {/* redirect after submit */}
+  <input
+    type="hidden"
+    name="_next"
+    value="https://cibi-k.vercel.app"
+  />
+
+  <motion.button
+    type="submit"
+    whileHover={{ scale: 1.02 }}
+    whileTap={{ scale: 0.98 }}
+    className="inline-flex items-center gap-2 gradient-bg text-primary-foreground px-8 py-3.5 rounded-xl font-medium hover:opacity-90 transition-all w-full justify-center neon-glow"
+  >
+    Send Message <Send size={16} />
+  </motion.button>
+</motion.form>
       </div>
     </SectionWrapper>
   );
