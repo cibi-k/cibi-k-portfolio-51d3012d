@@ -55,7 +55,7 @@ const ContactSection = () => {
         </motion.div>
 
         <motion.form
-          action="https://formspree.io/f/mjgpbdgl"
+          action="https://formspree.io/f/mlgodwob"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
