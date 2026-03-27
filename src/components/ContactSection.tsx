@@ -11,6 +11,8 @@ const socials = [
 ];
 
 const ContactSection = () => {
+ const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [focused, setFocused] = useState<string | null>(null);
 
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -53,7 +55,7 @@ const ContactSection = () => {
           </div>
         </motion.div>
 
-    <motion.form
+   <motion.form
   action="https://formspree.io/f/mlgodwob"
   method="POST"
   initial={{ opacity: 0, x: 30 }}
@@ -66,8 +68,6 @@ const ContactSection = () => {
     name="name"
     placeholder="Your Name"
     required
-    onFocus={() => setFocused("name")}
-    onBlur={() => setFocused(null)}
     className={inputClass("name")}
   />
 
@@ -76,8 +76,6 @@ const ContactSection = () => {
     name="email"
     placeholder="Your Email"
     required
-    onFocus={() => setFocused("email")}
-    onBlur={() => setFocused(null)}
     className={inputClass("email")}
   />
 
@@ -86,12 +84,9 @@ const ContactSection = () => {
     placeholder="Your Message"
     required
     rows={5}
-    onFocus={() => setFocused("message")}
-    onBlur={() => setFocused(null)}
     className={`${inputClass("message")} resize-none`}
   />
 
-  {/* redirect after submit */}
   <input
     type="hidden"
     name="_next"
