@@ -8,6 +8,7 @@ const profiles = [
   { name: "CodeChef", url: "https://www.codechef.com/users/cibi_k", icon: Trophy, gradient: "from-[hsl(10,70%,50%)] to-[hsl(30,80%,55%)]", description: "Competitive programming", stats: "1★ rated" },
   { name: "GeeksforGeeks", url: "#", icon: BookOpen, gradient: "from-[hsl(140,60%,40%)] to-[hsl(160,50%,45%)]", description: "Practice & learning", stats: " practiced 50+" },
   { name: "HackerRank", url: "https://www.hackerrank.com/profile/cibik", icon: Cpu, gradient: "from-[hsl(150,70%,38%)] to-[hsl(170,60%,42%)]", description: "Fundamentals", stats: "Worked on 75+" },
+  { name: "Codeforces", url: "https://codeforces.com/profile/", icon: Code, gradient: "from-[hsl(210,80%,50%)] to-[hsl(230,70%,55%)]", description: "Competitive programming", stats: "Active" },
 ];
 
 const CodingProfilesSection = () => (
