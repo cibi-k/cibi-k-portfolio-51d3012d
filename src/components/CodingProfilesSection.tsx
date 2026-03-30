@@ -1,7 +1,7 @@
 import SectionWrapper from "./SectionWrapper";
 import SectionTitle from "./SectionTitle";
 import { motion } from "framer-motion";
-import { ExternalLink, Trophy, Code, BookOpen, Cpu, Swords } from "lucide-react";
+import { ExternalLink, Trophy, Code, BookOpen, Cpu, Swords, Zap } from "lucide-react";
 
 const profiles = [
   { name: "LeetCode", url: "https://leetcode.com/u/CibiK319/", icon: Code, gradient: "from-[hsl(35,85%,55%)] to-[hsl(25,90%,50%)]", description: "Solving DSA problems", stats: "50+ solved" },
