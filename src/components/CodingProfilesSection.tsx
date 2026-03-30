@@ -14,7 +14,7 @@ const profiles = [
 const CodingProfilesSection = () => (
   <SectionWrapper id="coding-profiles">
     <SectionTitle title="Coding Profiles" subtitle="Where I practice and compete" />
-    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
       {profiles.map((p, i) => (
         <motion.a
           key={p.name}
