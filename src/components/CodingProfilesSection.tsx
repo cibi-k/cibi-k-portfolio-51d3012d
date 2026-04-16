@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { ExternalLink, Trophy, Code, BookOpen, Cpu, Swords, Zap } from "lucide-react";
 
 const profiles = [
-  { name: "LeetCode", url: "https://leetcode.com/u/CibiK319/", icon: Code, gradient: "from-[hsl(35,85%,55%)] to-[hsl(25,90%,50%)]", description: "Solving DSA problems", stats: "50+ solved" },
+  { name: "LeetCode", url: "https://leetcode.com/u/CibiK319/", icon: Code, gradient: "from-[hsl(35,85%,55%)] to-[hsl(25,90%,50%)]", description: "Solving DSA problems", stats: "100+ solved" },
   { name: "Codeforces", url: "https://codeforces.com/profile/Cibi-k-112", icon: Swords, gradient: "from-[hsl(210,80%,50%)] to-[hsl(230,70%,55%)]", description: "Competitive programmer", stats: "Aspiring Competitor" },
-  { name: "CodeChef", url: "https://www.codechef.com/users/cibi_k", icon: Trophy, gradient: "from-[hsl(10,70%,50%)] to-[hsl(30,80%,55%)]", description: "Competitive Coder", stats: "1★ rated" },
-  { name: "GeeksforGeeks", url: "https://www.geeksforgeeks.org/profile/cibik", icon: BookOpen, gradient: "from-[hsl(140,60%,40%)] to-[hsl(160,50%,45%)]", description: "Practice & learning", stats: " practiced 50+" },
-  { name: "HackerRank", url: "https://www.hackerrank.com/profile/cibik", icon: Cpu, gradient: "from-[hsl(150,70%,38%)] to-[hsl(170,60%,42%)]", description: "Fundamentals", stats: "Worked on 75+" },
+  { name: "CodeChef", url: "https://www.codechef.com/users/cibi_k", icon: Trophy, gradient: "from-[hsl(10,70%,50%)] to-[hsl(30,80%,55%)]", description: "Competitive Coder", stats: "2★ rated" },
+  { name: "GeeksforGeeks", url: "https://www.geeksforgeeks.org/profile/cibik", icon: BookOpen, gradient: "from-[hsl(140,60%,40%)] to-[hsl(160,50%,45%)]", description: "Practice & learning", stats: " practiced 100+" },
+  { name: "HackerRank", url: "https://www.hackerrank.com/profile/cibik", icon: Cpu, gradient: "from-[hsl(150,70%,38%)] to-[hsl(170,60%,42%)]", description: "Fundamentals", stats: "Worked on 150+" },
   { name: "HackerEarth", url: "https://www.hackerearth.com/@cibi-k/", icon: Zap, gradient: "from-[hsl(260,70%,55%)] to-[hsl(280,65%,50%)]", description: "Problem Solver", stats: "Active Participant" },
 ];
 
